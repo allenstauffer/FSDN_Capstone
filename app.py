@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, request, jsonify, abort
 from models import setup_db
 from flask_cors import CORS
 from models import Movies, Actors
@@ -24,27 +24,27 @@ def create_app(test_config=None):
     setup_db(app)
     CORS(app)
 
-    # @app.route('/actors', methods=['GET'])
-    # def get_drinks():
-    #     return jsonify({
-    #         'success': True,
-    #         'actors': get_actors()
-    #     })
+    @app.route('/actors', methods=['GET'])
+    def get_drinks():
+        return jsonify({
+            'success': True,
+            'actors': get_actors()
+        })
 
-    # @app.route('/movies', methods=['GET'])
-    # def get_drinks():
-    #     return jsonify({
-    #         'success': True,
-    #         'movies': get_movies()
-    #     })
+    @app.route('/movies', methods=['GET'])
+    def get_drinks():
+        return jsonify({
+            'success': True,
+            'movies': get_movies()
+        })
 
 
-    @app.route('/')
-    def get_greeting():
-        excited = os.environ['EXCITED']
-        greeting = "Hello" 
-        if excited == 'true': greeting = greeting + "!!!!!"
-        return greeting
+    # @app.route('/')
+    # def get_greeting():
+    #     excited = os.environ['EXCITED']
+    #     greeting = "Hello" 
+    #     if excited == 'true': greeting = greeting + "!!!!!"
+    #     return greeting
 
     # @app.route('/coolkids')
     # def be_cool():
