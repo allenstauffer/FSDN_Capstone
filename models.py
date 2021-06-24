@@ -32,29 +32,32 @@ class Movie(db.Model):
   __tablename__ = 'movie'
 
   id = Column(Integer, primary_key=True, autoincrement=True)
-  movies_title = Column(String)
-  movies_release_date = db.Column(db.Date)
+  movie_title = Column(String)
+  movie_release_date = db.Column(db.Date)
 
-  def __init__(self, movies_title="", movies_release_date=datetime.today()):
-    self.movies_title = movies_title
-    self.movies_release_date = movies_release_date
+  def __init__(self, movie_title="", movie_release_date=datetime.today()):
+    self.movie_title = movie_title
+    self.movie_release_date = movie_release_date
 
   def insert(self):
-      db.session.add(self)
-      db.session.commit()
+    db.session.add(self)
+    db.session.commit()
 
   def delete(self):
-      db.session.delete(self)
-      db.session.commit()
+    db.session.delete(self)
+    db.session.commit()
 
   def update(self):
-      db.session.commit()    
+    db.session.commit()    
 
   def format(self):
     return {
       'id': self.id,
-      'movies_title': self.movies_title,
-      'movies_release_date': self.movies_release_date}
+      'movie_title': self.movie_title,
+      'movie_release_date': self.movie_release_date}
+
+  def __repr__(self):
+    return json.dumps(self.format())       
 
 '''
 Movie
@@ -84,9 +87,12 @@ class Actor(db.Model):
   def update(self):
       db.session.commit()    
 
-def format(self):
-  return {
-    'id': self.id,
-    'actor_name': self.actor_name,
-    'actor_age': self.actor_age,
-    'actor_gender': self.actor_gender}
+  def format(self):
+    return {
+      'id': self.id,
+      'actor_name': self.actor_name,
+      'actor_age': self.actor_age,
+      'actor_gender': self.actor_gender}
+
+  def __repr__(self):
+    return json.dumps(self.format())    
