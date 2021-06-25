@@ -6,6 +6,7 @@ from models import Movie, Actor
 import sys
 from auth import AuthError, requires_auth
 
+
 def create_app(test_config=None):
     app = Flask(__name__)
     setup_db(app)
@@ -26,7 +27,7 @@ def create_app(test_config=None):
     @requires_auth('get:actors')
     def get_actor(payload, id):
         actor = Actor.query.get(id)
-        if actor == None:
+        if actor is None:
             abort(404)
         return jsonify({
             'success': True,
@@ -38,7 +39,7 @@ def create_app(test_config=None):
     def delete_actors(payload, id):
         actor = Actor.query.get(id)
         if actor is None:
-            abort(404)            
+            abort(404)
         actor.delete()
         return jsonify({
             "success": True,
@@ -62,22 +63,22 @@ def create_app(test_config=None):
         return jsonify({
             "success": True,
         }), 200
-    
+
     @app.route('/actors/<int:id>', methods=['PUT'])
     @requires_auth('put:actors')
     def put_actors(payload, id):
         actor = Actor.query.get(id)
         if actor is None:
-            abort(404)                 
+            abort(404)
         body = request.get_json()
         actor_name = body.get('name', None)
         actor_age = body.get('age', None)
         actor_gender = body.get('gender', None)
         if actor_name is None or actor_age is None or actor_gender is None:
             abort(400)
-        actor.actor_name=actor_name
-        actor.actor_age=actor_age
-        actor.actor_gender=actor_gender
+        actor.actor_name = actor_name
+        actor.actor_age = actor_age
+        actor.actor_gender = actor_gender
         actor.update()
         return jsonify({
             "success": True,
@@ -99,7 +100,7 @@ def create_app(test_config=None):
     def get_movie(payload, id):
         movie = Movie.query.get(id)
         if movie is None:
-            abort(404)            
+            abort(404)
         return jsonify({
             'success': True,
             'movie': movie.format()
@@ -110,7 +111,7 @@ def create_app(test_config=None):
     def delete_movies(payload, id):
         movie = Movie.query.get(id)
         if movie is None:
-            abort(404)            
+            abort(404)
         movie.delete()
         return jsonify({
             "success": True,
@@ -139,13 +140,13 @@ def create_app(test_config=None):
         body = request.get_json()
         movie = Movie.query.get(id)
         if movie is None:
-            abort(404)            
+            abort(404)
         title = body.get('title', None)
         release_date = body.get('release_date', None)
         if title is None or release_date is None:
             abort(400)
-        movie.movie_title=title
-        movie.movie_release_date=release_date
+        movie.movie_title = title
+        movie.movie_release_date = release_date
         movie.update()
         return jsonify({
             'success': True,
@@ -192,8 +193,8 @@ def create_app(test_config=None):
             "message": AuthError.error['description']
             }), AuthError.status_code
 
-
     return app
+
 
 app = create_app()
 

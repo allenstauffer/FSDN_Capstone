@@ -5,9 +5,10 @@ from jose import jwt
 from urllib.request import urlopen
 from os import environ
 
+defaultAddress = 'https://capstone-fsdn-allen-stauffer.herokuapp.com/'
 AUTH0_DOMAIN = environ.get('AUTH0_DOMAIN', 'allenstauffer.us.auth0.com')
 ALGORITHMS = environ.get('ALGORITHMS', 'RS256')
-API_AUDIENCE = environ.get('API_AUDIENCE', 'https://capstone-fsdn-allen-stauffer.herokuapp.com/')
+API_AUDIENCE = environ.get('API_AUDIENCE', defaultAddress)
 
 
 # AuthError Exception
