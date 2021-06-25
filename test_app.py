@@ -21,11 +21,11 @@ class Capstone(unittest.TestCase):
         self.database_path = "postgresql://{}@{}/{}".format(self.DB_USER,
                                                             self.DB_HOST,
                                                             self.DB_NAME)
-        self.bad_token = "00000000000000000000000000" +
-        "00000000000000000000000000" +
-        "00000000000000000000000000" +
-        "00000000000000000000000000" +
-        "0000000000000000000000"
+        self.bad_token = "{}{}{}{}".format("00000000000000000000000000",
+                                           "00000000000000000000000000",
+                                           "00000000000000000000000000",
+                                           "00000000000000000000000000",
+                                           "0000000000000000000000")
         self.token_casting_assistant = os.getenv('TOKEN_CASTING_ASSISTANT')
         self.token_casting_director = os.getenv('TOKEN_CASTING_DIRECTOR')
         self.token_executive_producer = os.getenv('TOKEN_EXECUTIVE_PRODUCER')
@@ -78,14 +78,14 @@ class Capstone(unittest.TestCase):
             self.db.session.add(self.add_actor)
             self.db.session.add(self.add_actor2)
             self.db.session.add(self.delete_movie)
-            self.db.session.add(se)
+            self.db.session.add(self.delete_movie_prod)
             self.db.session.add(self.add_movie)
             self.db.session.add(self.add_movie2)
             self.db.session.commit()
             self.delete_actor_id = self.delete_actor.id
             self.delete_actor_producer_id = self.delete_actor_producer.id
             self.delete_movie_id = self.delete_movie.id
-            se_id = se.id
+            self.delete_movie_prod_id = self.delete_movie_prod.id
             self.total_actors = 4
             self.total_movies = 5
 
@@ -440,16 +440,16 @@ class Capstone(unittest.TestCase):
 
     def test_get_movies_executive_producer(self):
         self.assertTrue(True)
-        path = "/movies/{}".format(se_id)
+        path = "/movies/{}".format(self.delete_movie_prod_id)
         res = self.send_token_request_get(path,
                                           self.token_executive_producer)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertEqual(data['movie']["id"],
-                         se_id)
+                         self.delete_movie_prod_id)
         self.assertEqual(data['movie']["movie_title"],
-                         se.movie_title)
+                         self.delete_movie_prod.movie_title)
         self.assertEqual(data['movie']["movie_release_date"],
                          self.del_time)
 
@@ -572,7 +572,7 @@ class Capstone(unittest.TestCase):
 
     def test_put_movies_executive_producer(self):
         self.assertTrue(True)
-        path = "/movies/{}".format(se_id)
+        path = "/movies/{}".format(self.delete_movie_prod_id)
         res = self.send_token_request_put(path,
                                           self.token_executive_producer,
                                           self.new_movie_executive_producer)
@@ -593,7 +593,7 @@ class Capstone(unittest.TestCase):
 
     def test_put_movies_executive_producer_malformedTitle(self):
         self.assertTrue(True)
-        path = "/movies/{}".format(se_id)
+        path = "/movies/{}".format(self.delete_movie_prod_id)
         res = self.send_token_request_put(path,
                                           self.token_executive_producer,
                                           {"title": "test"})
@@ -604,7 +604,7 @@ class Capstone(unittest.TestCase):
 
     def test_put_movies_executive_producer_malformedReleasedDate(self):
         self.assertTrue(True)
-        path = "/movies/{}".format(se_id)
+        path = "/movies/{}".format(self.delete_movie_prod_id)
         res = self.send_token_request_put(path,
                                           self.token_executive_producer,
                                           {"release_date":
@@ -637,14 +637,14 @@ class Capstone(unittest.TestCase):
     def test_delete_movies_executive_producer(self):
         self.assertTrue(True)
         newCount = len(Movie.query.all()) - 1
-        path = "/movies/{}".format(se_id)
+        path = "/movies/{}".format(self.delete_movie_prod_id)
         res = self.send_token_request_delete(path,
                                              self.token_executive_producer)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertEqual(len(Movie.query.all()), newCount)
-        self.assertEqual(Actor.query.get(se_id), None)
+        self.assertEqual(Actor.query.get(self.delete_movie_prod_id), None)
 
     def test_delete_movies_executive_producer_notFound(self):
         self.assertTrue(True)
