@@ -88,7 +88,7 @@ Modify actors or movies
 Add or delete a movie from the database
 
 ## Endpoints 
--URL of the API
+-URL of the API 
 all endpoints can be accessed from the following url: https://allen-stauffer-fsdn-capstone.herokuapp.com/
 ### GET /actors
 - General:
