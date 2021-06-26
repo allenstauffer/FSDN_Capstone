@@ -1,0 +1,1213 @@
+{
+	"info": {
+		"_postman_id": "58fbf16a-55f0-498d-be1b-36851b6e3ca2",
+		"name": "capstone_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"changed movie2\", \"release_date\": \"2012-05-23T18:25:43.511Z\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"changed movie2\", \"release_date\": \"2012-05-23T18:25:43.511Z\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"test actor\", \"age\": 0, \"gender\":\"female\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"test actor\", \"age\": 0, \"gender\":\"female\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "casting_assistant",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movies array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movies).to.be.an('array')",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actors array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actors).to.be.an('array')",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"changed movie2\", \"release_date\": \"2012-05-23T18:25:43.511Z\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"changed movie2\", \"release_date\": \"2012-05-23T18:25:43.511Z\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"test actor\", \"age\": 0, \"gender\":\"female\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"test actor\", \"age\": 0, \"gender\":\"female\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkFkRWRUVnhORzVBM3dtdzNjWngwcCJ9.eyJpc3MiOiJodHRwczovL2FsbGVuc3RhdWZmZXIudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwZDRiMDhhN2NkNzlkMDA2ODM5MzhmNSIsImF1ZCI6Imh0dHBzOi8vY2Fwc3RvbmUtZnNkbi1hbGxlbi1zdGF1ZmZlci5oZXJva3VhcHAuY29tLyIsImlhdCI6MTYyNDczMjg4OSwiZXhwIjoxNjI0ODE5Mjg5LCJhenAiOiJDMld0djlpT1U4YVk0Sk44cEtHSTlPR0R3QWxQSGc1MSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.fHpMgWWwbn9IUbwq73GLkxuvJVrvviITYq1M4zA-M4mRvSPdECYy269s8qD7QZ0MaXUbB6AavICQYcXMU0tEE8OSYmoyRFapRtKJ2othVOx35PBHuwijBJppRotJA_aS9TVMDrj6x99zBSf0T7tcZHGLsDev3_aj0dIv7LOg9EjZ_O-7iDnlM8XvJnv3N7GHpi2KZwL6lNzUSTBZ3Yjhd4QHXEQwxbXd_0jKQ14h8qQhn8Bi3dAggyl0SeDYYL1nHi2rEAj4Inncrbmrd-lQJm_gQR07eovWkOw-86645bKIRmD5caEEFrVwhB0911G5G8j3HCnEckE91LTF_4gw5w",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "casting_director",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movies array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movies).to.be.an('array')",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actors array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actors).to.be.an('array')",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"changed movie2\", \"release_date\": \"2012-05-23T18:25:43.511Z\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"changed movie2\", \"release_date\": \"2012-05-23T18:25:43.511Z\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"test actor\", \"age\": 0, \"gender\":\"female\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"test actor\", \"age\": 0, \"gender\":\"female\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkFkRWRUVnhORzVBM3dtdzNjWngwcCJ9.eyJpc3MiOiJodHRwczovL2FsbGVuc3RhdWZmZXIudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwZDRiMTJiZDk1NTcxMDA3MGQ1ZDZlYiIsImF1ZCI6Imh0dHBzOi8vY2Fwc3RvbmUtZnNkbi1hbGxlbi1zdGF1ZmZlci5oZXJva3VhcHAuY29tLyIsImlhdCI6MTYyNDczMjk2MSwiZXhwIjoxNjI0ODE5MzYxLCJhenAiOiJDMld0djlpT1U4YVk0Sk44cEtHSTlPR0R3QWxQSGc1MSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwdXQ6YWN0b3JzIiwicHV0Om1vdmllcyJdfQ.OniTOeABspc6T12c4JWj16-z8_YdrVaxTE_onbe39qMY8GJPiYb1DD9eNh3ycqpoW7p36d2G9HHb1P0ZpspM6MOJLEEcVJlGFcjveFxrGu9KMtou9UTnpd8mW4FXcrPxhH8pt5PPTDo0lloiaF-5yG1wvlCV0Mf7aqnzqE4-6OkKKWR0CaDPfJ5SvfEHFdazo-hSGVyY-P0zYO0q-O-hteiEtmrIp8VmWnD5DVZ0Cz-mDrNuAaOmZJXROYodqRbp4O7-EoyTXrQn8mMBuI2rq0o-gUt01iSVgu6rIBXrgFMaOQ2xBc96VW9tM8eXDyyTwgUKK4cG6PtaU0na2jdu-A",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "executive_producer",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movies array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movies).to.be.an('array')",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actors array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actors).to.be.an('array')",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"changed movie2\", \"release_date\": \"2012-05-23T18:25:43.511Z\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"changed movie2\", \"release_date\": \"2012-05-23T18:25:43.511Z\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"test actor\", \"age\": 0, \"gender\":\"female\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"test actor\", \"age\": 0, \"gender\":\"female\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://allen-stauffer-fsdn-capstone.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"allen-stauffer-fsdn-capstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkFkRWRUVnhORzVBM3dtdzNjWngwcCJ9.eyJpc3MiOiJodHRwczovL2FsbGVuc3RhdWZmZXIudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwOGIzOWFhNGYyNWJlMDA2OGFhOTgxNiIsImF1ZCI6Imh0dHBzOi8vY2Fwc3RvbmUtZnNkbi1hbGxlbi1zdGF1ZmZlci5oZXJva3VhcHAuY29tLyIsImlhdCI6MTYyNDczMzAxNywiZXhwIjoxNjI0ODE5NDE3LCJhenAiOiJDMld0djlpT1U4YVk0Sk44cEtHSTlPR0R3QWxQSGc1MSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiLCJwdXQ6YWN0b3JzIiwicHV0Om1vdmllcyJdfQ.OGmYE_n4C1YxIS69nbrucdIn3RxJhLlIG2Xmiek3uu6_7ujLffUrcvyieB13oRhdpgDXPBl3I5NiFBa0fAeq5OTzZ5y6PZrosztvEnWtT_d3_RIx9Zl3hbYhJD3PfHG4QDX5YKdilxaAmTNmEHj1qwatKWOySt3PxhOF63mxLr4xTbVPIBjteGkd1I_ThR3qUOR7Sh1nKxY6bU8ICPii4t8qBcFpdbW04CtM1_3B9oeBOo_FBPKcnWOs6wWrpwlg1JdoFZDz9DMY1jfM4HyyLeckQXfMN6D-1zz4xjlFy0dSse1heD2kNkeqqgfl8yzd-a2wK-apj_3dJSAGzX3lYw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:5000",
+			"type": "string"
+		}
+	]
+}
