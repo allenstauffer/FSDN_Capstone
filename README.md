@@ -1,4 +1,5 @@
-# Full Stack Trivia API Backend
+# Capstone casting directory API Backend
+This is the final assignment for the FSDN course through udacity. I am doing this so that I can pass my udacity course and move on at work.
 
 ## Getting Started
 
@@ -48,7 +49,15 @@ flask run --reload
 
 The `--reload` flag will detect file changes and restart the server automatically.
 
-### Error Handling
+## Pushing to server on heroku
+### Setting up heroku remote
+git remote add heroku https://git.heroku.com/allen-stauffer-fsdn-capstone.git
+### Pushing Changes to heroku
+git push heroku master
+### Updating the database if any changes are made to the db
+heroku run python manage.py db upgrade --app allen-stauffer-fsdn-capstone.git
+
+## Error Handling
 Errors are returned as JSON objects in the following format:
 ```
 {
@@ -62,24 +71,26 @@ The API will return three error types when requests fail:
 - 404: Resource Not Found
 - 422: Not Processable 
 
-### User Roles
+## User Roles
 There are 3 user roles that will allow access to different data
-#### Casting Assistant
+### Casting Assistant
 Can view actors and movies
 
-#### Casting Director
+### Casting Director
 Can view actors and movies
 Add or delete an actor from the database
 Modify actors or movies
 
-#### Executive Producer
+### Executive Producer
 Can view actors and movies
 Add or delete an actor from the database
 Modify actors or movies
 Add or delete a movie from the database
 
-### Endpoints 
-#### GET /actors
+## Endpoints 
+-URL of the API
+all endpoints can be accessed from the following url: https://allen-stauffer-fsdn-capstone.herokuapp.com/
+### GET /actors
 - General:
     - Returns a list of actors
 
@@ -126,7 +137,7 @@ Add or delete a movie from the database
 }
 ```
 
-#### GET /actors/{id}
+### GET /actors/{id}
 - General:
     - Returns an actor object
 
@@ -142,7 +153,7 @@ Add or delete a movie from the database
 }
 ```
 
-#### DELETE /actor/{question_id}
+### DELETE /actor/{question_id}
 - General:
     - Deletes the actor of the given ID if it exists. Returns success or failure
 
@@ -239,7 +250,6 @@ Add or delete a movie from the database
   "success": true,
 }
 ```
-
 
 ## Testing
 To run the tests, run
